@@ -134,14 +134,14 @@ def call_back_inline(call):
         user_name = database_pr.get_user_name(user_id)
         if user_lang[user_id] == 'ru':
             user_lang[user_id] = 'uz'
-            database_pr.change_lang_uz(user_id)  # Исправлено: вызываем правильную функцию
+            database_pr.change_lang_uz(user_id) 
             # Используем новый язык для текста
             bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id,
                                 text=TEXT['uz']['lang_is_ch'], reply_markup=button_pr.my_info('uz'))
 
         elif user_lang[user_id] == 'uz':
             user_lang[user_id] = 'ru'
-            database_pr.change_lang_ru(user_id)  # Исправлено: вызываем правильную функцию
+            database_pr.change_lang_ru(user_id)  
             # Используем новый язык для текста
             bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id,
                                 text=TEXT['ru']['lang_is_ch'], reply_markup=button_pr.my_info('ru'))
